@@ -3,37 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Four Seasons Hotel Mexico City | Concierge & Experience Hub</title>
-    <meta name="description" content="Portal de experiencias exclusivas, gastronomía y estancias en Four Seasons Hotel Mexico City, Paseo de la Reforma.">
+    <title>Four Seasons Hotel Mexico City | Directorio Oficial</title>
+    <meta name="description" content="Hacienda urbana de alta hospitalidad en Paseo de la Reforma. Reservaciones, suites y gastronomía exclusiva.">
     
-    <!-- Tipografía Editorial de Lujo: Cormorant Garamond, Playfair Display y Montserrat -->
+    <!-- Tipografía Editorial Internacional: Cormorant Garamond & Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
-        /* =========================================
-           PALETA CROMÁTICA: NOBLEZA, TIERRA Y SEDA
-           ========================================= */
+        /* =========================================================
+           PALETA DE MATERIALES NOBLES: HACIENDA REFORMA
+           ========================================================= */
         :root {
-            --oro-seda: #BFA175;
-            --oro-champagne: #D4BE98;
-            --oro-bruñido: #9E7D4E;
-            --verde-bosque: #19261D;
-            --verde-profundo: #111A13;
-            --marfil-puro: #FAF8F5;
-            --arena-chukum: #EFE9DF;
-            --velo-aljez: rgba(253, 251, 247, 0.82);
-            --borde-filo: rgba(191, 161, 117, 0.28);
-            --borde-luz: rgba(255, 255, 255, 0.85);
-            --sombra-tactil: rgba(17, 26, 19, 0.05);
-            --sombra-aurea: rgba(191, 161, 117, 0.14);
-            --transicion-seda: cubic-bezier(0.16, 1, 0.3, 1);
+            /* Verdes Botánicos de la Hacienda */
+            --verde-perfil-fs: #2A3625;
+            --verde-profundo: #111A12;
+            --verde-patio-noche: #172418;
+            --verde-olivo-luz: #3A4C34;
+            
+            /* Textil, Travertino y Porcelana */
+            --travertino-luz: #FAF7F2;
+            --marfil-lino: #EEE7DC;
+            --crema-suave: #D9CEBE;
+            
+            /* Metales y Terracotas */
+            --oro-laton: #C7A779;
+            --oro-champagne: #DECAB0;
+            --terracota-sol: #984E39;
+            --bronce-tenue: rgba(199, 167, 121, 0.28);
+            
+            --transicion-lujo: cubic-bezier(0.22, 1, 0.36, 1);
         }
 
-        /* =========================================
-           RESET Y BASES DE PANTALLA
-           ========================================= */
         * {
             margin: 0;
             padding: 0;
@@ -46,8 +48,9 @@
         }
 
         body {
-            background: transparent;
-            font-family: 'Cormorant Garamond', serif;
+            background-color: var(--verde-profundo);
+            color: var(--travertino-luz);
+            font-family: 'Montserrat', sans-serif;
             min-height: 100vh;
             min-height: 100dvh;
             display: flex;
@@ -56,695 +59,789 @@
             justify-content: space-between;
             position: relative;
             overflow-x: hidden;
-            color: var(--verde-bosque);
-            padding: env(safe-area-inset-top, 24px) 16px env(safe-area-inset-bottom, 24px);
+            padding: calc(env(safe-area-inset-top, 20px) + 24px) 20px calc(env(safe-area-inset-bottom, 20px) + 24px);
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* =========================================
-           ATMÓSFERA LUMÍNICA: EL PATIO DE REFORMA
-           ========================================= */
-        .b2b-bg-canvas {
+        /* =========================================================
+           FONDO ATMOSFÉRICO: VIVO Y PERCEPTIBLE
+           ========================================================= */
+        .scenic-background {
             position: fixed;
             inset: 0;
             width: 100vw;
             height: 100vh;
-            z-index: -2;
-            background: radial-gradient(circle at 50% 20%, #FCFAF7 0%, #EDE6DC 70%, #E2D9CB 100%);
-            overflow: hidden;
+            z-index: -1;
             pointer-events: none;
+            overflow: hidden;
+            background: 
+                radial-gradient(ellipse 90% 60% at 50% 0%, #203322 0%, #131E14 45%, #0B110C 100%);
         }
 
-        .luz-sol-patio {
+        .dappled-sunlight {
             position: absolute;
-            top: -150px;
+            top: -12%;
             left: 50%;
             transform: translateX(-50%);
-            width: 850px;
-            height: 750px;
-            background: radial-gradient(circle, rgba(235, 222, 198, 0.45) 0%, rgba(212, 190, 152, 0.12) 45%, transparent 70%);
-            filter: blur(90px);
-            animation: veloRespiracion 18s infinite alternate ease-in-out;
+            width: 820px;
+            height: 640px;
+            background: radial-gradient(circle at 50% 35%, 
+                rgba(222, 202, 176, 0.24) 0%, 
+                rgba(152, 78, 57, 0.16) 38%, 
+                rgba(42, 54, 37, 0.2) 65%, 
+                transparent 80%);
+            filter: blur(55px);
+            animation: respiracionSolar 11s infinite alternate ease-in-out;
         }
 
-        .shape {
+        .warm-terracotta-glow {
             position: absolute;
-            border-radius: 46% 54% 60% 40% / 42% 48% 52% 58%;
-            will-change: transform, opacity;
-            pointer-events: none;
-        }
-
-        .ring {
-            position: absolute;
-            border-radius: 50%;
-            border: 1px solid var(--borde-filo);
-            background: transparent;
-            will-change: transform;
-            pointer-events: none;
-        }
-
-        .s-botanica {
+            bottom: 5%;
+            right: -15%;
             width: 520px;
             height: 520px;
-            background: #4D5E4F;
-            opacity: 0.035;
-            top: -5%;
-            left: -8%;
-            animation: derivaLenta 38s infinite alternate ease-in-out;
+            background: radial-gradient(circle, rgba(152, 78, 57, 0.22) 0%, rgba(42, 54, 37, 0.05) 60%, transparent 80%);
+            filter: blur(65px);
+            animation: oscilacionBrisa 18s infinite alternate ease-in-out;
         }
 
-        .s-cantera {
-            width: 640px;
-            height: 640px;
-            background: #C4B59D;
-            opacity: 0.07;
-            bottom: -12%;
-            right: -10%;
-            animation: derivaLenta 44s infinite alternate-reverse ease-in-out;
-        }
-
-        .s-sombra-suave {
-            width: 400px;
-            height: 400px;
-            background: #8A7B69;
-            opacity: 0.03;
-            top: 40%;
-            left: 20%;
+        .botanical-glow-left {
+            position: absolute;
+            top: 30%;
+            left: -20%;
+            width: 480px;
+            height: 480px;
+            background: radial-gradient(circle, rgba(58, 76, 52, 0.35) 0%, transparent 70%);
             filter: blur(60px);
-            animation: derivaLenta 26s infinite alternate ease-in-out;
+            animation: oscilacionBrisa 22s infinite alternate-reverse ease-in-out;
         }
 
-        .ring.r-primario {
-            width: 560px;
-            height: 560px;
-            top: 2%;
-            right: 8%;
-            border-color: rgba(191, 161, 117, 0.18);
-            animation: giroSereno 65s infinite linear;
+        .patio-fountain-geometry {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 720px;
+            height: 720px;
+            border-radius: 50%;
+            border: 1px solid rgba(199, 167, 121, 0.12);
+            box-shadow: inset 0 0 80px rgba(199, 167, 121, 0.04);
+            animation: giroPausado 140s infinite linear;
         }
 
-        .ring.r-secundario {
-            width: 340px;
-            height: 340px;
-            bottom: 8%;
-            left: 12%;
-            border: 1px dashed rgba(95, 111, 101, 0.16);
-            animation: giroSereno 48s infinite reverse linear;
+        .patio-fountain-geometry::after {
+            content: '';
+            position: absolute;
+            inset: 30px;
+            border-radius: 50%;
+            border: 1px dashed rgba(222, 202, 176, 0.08);
         }
 
-        @keyframes veloRespiracion {
-            0% { opacity: 0.5; transform: translateX(-50%) scale(0.97); }
-            100% { opacity: 0.85; transform: translateX(-50%) scale(1.04); }
+        @keyframes respiracionSolar {
+            0% { opacity: 0.65; transform: translateX(-50%) scale(0.95); }
+            50% { opacity: 0.95; transform: translateX(-48%) scale(1.05); }
+            100% { opacity: 0.70; transform: translateX(-52%) scale(0.98); }
         }
 
-        @keyframes derivaLenta {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            100% { transform: translate(25px, -35px) rotate(8deg); }
+        @keyframes oscilacionBrisa {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(-40px) scale(1.1); }
         }
 
-        @keyframes giroSereno {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        @keyframes giroPausado {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
         }
 
-        /* =========================================
-           CONTENEDOR CENTRAL: ARQUITECTURA DE PÁGINA
-           ========================================= */
-        .luxury-hub {
-            position: relative;
-            z-index: 10;
-            width: 90%;
+        /* =========================================================
+           CONTENEDOR CENTRAL
+           ========================================================= */
+        .directorate-container {
+            width: 100%;
             max-width: 440px;
-            padding: 24px 0 16px 0;
             display: flex;
             flex-direction: column;
-            gap: 28px;
+            gap: 32px;
             margin: auto;
+            position: relative;
+            z-index: 10;
         }
 
-        /* CABECERA HERÁLDICA */
-        .fs-header {
-            text-align: center;
+        /* =========================================================
+           CABECERA: LOGO OFICIAL ORIGINAL
+           ========================================================= */
+        .brand-header {
             display: flex;
             flex-direction: column;
             align-items: center;
+            text-align: center;
             gap: 16px;
         }
 
-        .logo-emblem-wrap {
-            position: relative;
+        .brand-logo-frame {
+            width: 100%;
             display: flex;
-            align-items: center;
             justify-content: center;
-            width: 72px;
-            height: 72px;
+            align-items: center;
+            padding: 4px 0;
+            transition: transform 0.4s var(--transicion-lujo);
         }
 
-        .logo-halo {
-            position: absolute;
-            inset: 0;
-            border-radius: 50%;
-            border: 1px solid rgba(191, 161, 117, 0.22);
-            animation: haloPulso 6s infinite alternate ease-in-out;
+        .brand-logo-frame:hover {
+            transform: scale(1.02);
         }
 
-        @keyframes haloPulso {
-            0% { transform: scale(0.95); opacity: 0.4; }
-            100% { transform: scale(1.05); opacity: 0.8; }
+        /* Renderizado nítido del SVG oficial */
+        #svg8 {
+            width: 100%;
+            max-width: 255px;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.5));
         }
 
-        .fs-tree-refined {
-            width: 46px;
-            height: 46px;
-            fill: none;
-            stroke: var(--verde-profundo);
-            stroke-width: 1.2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            filter: drop-shadow(0 2px 6px rgba(17, 26, 19, 0.08));
+        #svg8 path,
+        #svg8 polyline {
+            fill: var(--travertino-luz) !important;
         }
 
-        .title-wrapper {
+        .brand-identity {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 6px;
         }
 
-        .brand-eyebrow {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.65rem;
-            font-weight: 400;
-            letter-spacing: 0.38em;
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .hotel-destination {
+            font-size: 0.70rem;
+            font-weight: 500;
+            letter-spacing: 0.36em;
             text-transform: uppercase;
-            color: var(--oro-viejo);
+            color: var(--oro-laton);
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        .brand-eyebrow::before,
-        .brand-eyebrow::after {
+        .hotel-destination::before,
+        .hotel-destination::after {
             content: '';
-            width: 20px;
+            width: 24px;
             height: 1px;
-            background: linear-gradient(90deg, transparent, var(--oro-seda));
+            background: linear-gradient(90deg, transparent, var(--oro-laton));
         }
 
-        .brand-eyebrow::after {
-            background: linear-gradient(90deg, var(--oro-seda), transparent);
+        .hotel-destination::after {
+            background: linear-gradient(90deg, var(--oro-laton), transparent);
         }
 
-        .fs-header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.62rem;
-            font-weight: 500;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            color: var(--verde-profundo);
-            line-height: 1.1;
-        }
-
-        .fs-header .location-tag {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.66rem;
+        .hotel-intro-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.05rem;
             font-weight: 400;
-            letter-spacing: 0.32em;
-            text-transform: uppercase;
-            color: var(--oro-bruñido);
+            color: var(--marfil-lino);
+            opacity: 0.92;
+            max-width: 330px;
+            line-height: 1.35;
+            margin-top: 2px;
         }
 
-        /* =========================================
-           CUADRÍCULA MOSAICO EDITORIAL
-           ========================================= */
-        .mosaic-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+        /* =========================================================
+           DIRECTORIO DE EXPERIENCIAS
+           ========================================================= */
+        .experience-directory {
+            display: flex;
+            flex-direction: column;
             gap: 14px;
             width: 100%;
         }
 
-        .span-2 { grid-column: span 2; }
-        .span-1 { grid-column: span 1; }
-
-        .card {
-            background: var(--velo-aljez);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border: 1px solid var(--borde-filo);
-            border-radius: 14px;
+        .concierge-card {
+            background: linear-gradient(135deg, 
+                rgba(32, 47, 34, 0.85) 0%, 
+                rgba(21, 32, 22, 0.92) 50%, 
+                rgba(14, 23, 15, 0.96) 100%);
+            border: 1px solid var(--bronce-tenue);
+            border-radius: 4px;
+            padding: 20px 24px;
             text-decoration: none;
-            color: var(--verde-bosque);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            color: inherit;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
             position: relative;
-            overflow: hidden;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             box-shadow: 
-                0 1px 2px rgba(17, 26, 19, 0.03),
-                0 12px 28px -6px var(--sombra-tactil),
-                inset 0 1px 1px 0 var(--borde-luz);
-            transition: all 0.42s var(--transicion-seda);
-            cursor: pointer;
+                0 10px 28px -6px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            transition: all 0.4s var(--transicion-lujo);
+            overflow: hidden;
         }
 
-        /* Línea tenue de realce superior en tarjeta */
-        .card::before {
+        .concierge-card::before {
             content: '';
             position: absolute;
+            left: 0;
             top: 0;
-            left: 15%;
-            right: 15%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--oro-champagne), transparent);
-            opacity: 0.6;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--oro-laton), transparent);
+            opacity: 0.4;
             transition: opacity 0.4s ease;
         }
 
-        .span-2 {
-            padding: 22px 24px;
-        }
-
-        .span-1 {
-            padding: 22px 18px;
-            min-height: 154px;
-        }
-
-        .card-meta-header {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 12px;
-        }
-
-        .card-num {
-            font-family: 'Montserrat', sans-serif;
+        .card-meta-top {
             font-size: 0.58rem;
             font-weight: 500;
-            letter-spacing: 0.18em;
-            color: var(--oro-viejo);
-            text-transform: uppercase;
-        }
-
-        .card-ico-wrapper svg {
-            width: 22px;
-            height: 22px;
-            stroke: var(--oro-viejo);
-            stroke-width: 1.15;
-            fill: none;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            transition: stroke 0.35s ease, transform 0.4s var(--transicion-seda);
-        }
-
-        .card-content {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .card h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.12rem;
-            font-weight: 500;
-            line-height: 1.25;
-            letter-spacing: 0.02em;
-            color: var(--verde-profundo);
-            transition: color 0.3s ease;
-        }
-
-        .span-1 h2 {
-            font-size: 1.05rem;
-        }
-
-        .card-subtitle {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.62rem;
-            font-weight: 400;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: #726A5E;
-            transition: color 0.3s ease;
-        }
-
-        .card-action-cue {
-            margin-top: 14px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.56rem;
-            font-weight: 500;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            color: var(--oro-viejo);
-            opacity: 0.85;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .card-action-cue svg {
-            width: 10px;
-            height: 10px;
-            stroke: currentColor;
-            stroke-width: 1.5;
-            fill: none;
-            transition: transform 0.3s ease;
-        }
-
-        /* ESTADOS HOVER / FOCUS: ELEGANCIA SIN ESTRIDENCIA */
-        .card:hover, .card:focus-visible {
-            transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.94);
-            border-color: rgba(191, 161, 117, 0.55);
-            box-shadow: 
-                0 2px 4px rgba(17, 26, 19, 0.02),
-                0 18px 36px -8px var(--sombra-aurea),
-                inset 0 1px 2px 0 #FFFFFF;
-        }
-
-        .card:hover::before {
-            opacity: 1;
-            left: 5%;
-            right: 5%;
-        }
-
-        .card:hover h2 {
-            color: #121D15;
-        }
-
-        .card:hover .card-subtitle {
-            color: var(--oro-bruñido);
-        }
-
-        .card:hover .card-ico-wrapper svg {
-            stroke: var(--verde-profundo);
-            transform: scale(1.05);
-        }
-
-        .card:hover .card-action-cue {
-            opacity: 1;
-            color: var(--verde-profundo);
-        }
-
-        .card:hover .card-action-cue svg {
-            transform: translateX(3px);
-        }
-
-        .card:active {
-            transform: translateY(-1px) scale(0.995);
-        }
-
-        /* =========================================
-           PIE DE PÁGINA: DETALLE CONSERJERÍA
-           ========================================= */
-        .fs-footer {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 14px;
-            padding-top: 10px;
-            z-index: 10;
-        }
-
-        .reforma-address {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.58rem;
-            font-weight: 400;
             letter-spacing: 0.28em;
             text-transform: uppercase;
-            color: #8C8275;
-            text-align: center;
+            color: var(--oro-laton);
+            margin-bottom: 5px;
+            display: block;
         }
 
-        .social-link {
+        .card-headline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.45rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: var(--travertino-luz);
+            line-height: 1.15;
+            transition: color 0.35s ease;
+        }
+
+        .card-caption {
+            font-size: 0.72rem;
+            font-weight: 300;
+            color: var(--marfil-lino);
+            letter-spacing: 0.03em;
+            margin-top: 4px;
+            line-height: 1.4;
+            opacity: 0.85;
+        }
+
+        .card-action-mark {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 1px solid rgba(199, 167, 121, 0.35);
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            padding: 8px 18px;
-            border-radius: 999px;
-            background: var(--velo-aljez);
-            backdrop-filter: blur(16px);
-            border: 1px solid var(--borde-filo);
+            margin-left: 16px;
+            transition: all 0.4s var(--transicion-lujo);
+            background: rgba(199, 167, 121, 0.04);
+        }
+
+        .card-action-mark svg {
+            width: 14px;
+            height: 14px;
+            stroke: var(--oro-laton);
+            stroke-width: 1.5;
+            fill: none;
+            transition: transform 0.4s var(--transicion-lujo), stroke 0.3s ease;
+        }
+
+        .directory-duo-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .duo-card {
+            background: linear-gradient(145deg, 
+                rgba(32, 47, 34, 0.82) 0%, 
+                rgba(17, 26, 18, 0.94) 100%);
+            border: 1px solid var(--bronce-tenue);
+            border-radius: 4px;
+            padding: 20px 18px;
             text-decoration: none;
-            color: var(--verde-bosque);
-            font-family: 'Montserrat', sans-serif;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 155px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 
+                0 8px 24px -4px rgba(0, 0, 0, 0.45),
+                inset 0 1px 0 rgba(255, 255, 255, 0.07);
+            transition: all 0.4s var(--transicion-lujo);
+            position: relative;
+        }
+
+        .duo-card .card-headline {
+            font-size: 1.25rem;
+            line-height: 1.15;
+            margin-top: 4px;
+        }
+
+        .duo-card .card-caption {
+            font-size: 0.67rem;
+            margin-top: 5px;
+        }
+
+        .duo-bottom-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 16px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(199, 167, 121, 0.12);
+        }
+
+        .duo-signature {
+            font-size: 0.58rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--oro-laton);
+        }
+
+        .duo-arrow svg {
+            width: 12px;
+            height: 12px;
+            stroke: var(--oro-laton);
+            stroke-width: 1.5;
+            fill: none;
+            transition: transform 0.4s var(--transicion-lujo);
+        }
+
+        /* Hover States */
+        .concierge-card:hover,
+        .duo-card:hover {
+            border-color: rgba(199, 167, 121, 0.65);
+            background: linear-gradient(135deg, 
+                rgba(38, 56, 40, 0.94) 0%, 
+                rgba(25, 38, 26, 0.98) 100%);
+            transform: translateY(-3px);
+            box-shadow: 
+                0 18px 40px -8px rgba(0, 0, 0, 0.65),
+                0 0 20px rgba(199, 167, 121, 0.15);
+        }
+
+        .concierge-card:hover::before {
+            opacity: 1;
+        }
+
+        .concierge-card:hover .card-headline,
+        .duo-card:hover .card-headline {
+            color: #FFFFFF;
+        }
+
+        .concierge-card:hover .card-action-mark {
+            background: var(--oro-laton);
+            border-color: var(--oro-laton);
+            transform: translateX(4px);
+        }
+
+        .concierge-card:hover .card-action-mark svg {
+            stroke: #121A13;
+        }
+
+        .duo-card:hover .duo-arrow svg {
+            transform: translateX(4px);
+        }
+
+        /* =========================================================
+           PIE DE PÁGINA
+           ========================================================= */
+        .brand-footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 16px;
+            padding-top: 12px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .patio-address {
             font-size: 0.62rem;
+            font-weight: 400;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--crema-suave);
+            opacity: 0.75;
+            line-height: 1.6;
+        }
+
+        .instagram-official-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 24px;
+            border-radius: 30px;
+            background: rgba(42, 54, 37, 0.45);
+            border: 1px solid var(--bronce-tenue);
+            color: var(--travertino-luz);
+            text-decoration: none;
+            font-size: 0.65rem;
             font-weight: 500;
             letter-spacing: 0.22em;
             text-transform: uppercase;
-            transition: all 0.35s var(--transicion-seda);
-            box-shadow: 0 4px 14px var(--sombra-tactil);
+            transition: all 0.35s var(--transicion-lujo);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
         }
 
-        .social-link svg {
-            width: 14px;
-            height: 14px;
-            stroke: var(--oro-viejo);
-            stroke-width: 1.4;
+        .instagram-official-link svg {
+            width: 13px;
+            height: 13px;
+            stroke: var(--oro-laton);
+            stroke-width: 1.6;
             fill: none;
-            transition: stroke 0.3s ease;
+            transition: transform 0.35s ease;
         }
 
-        .social-link:hover {
+        .instagram-official-link:hover {
+            border-color: var(--oro-laton);
+            background: rgba(42, 54, 37, 0.85);
+            color: var(--oro-champagne);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45), 0 0 14px rgba(199, 167, 121, 0.2);
             transform: translateY(-2px);
-            border-color: var(--oro-viejo);
-            background: #FFFFFF;
-            box-shadow: 0 8px 20px var(--sombra-aurea);
-            color: var(--verde-profundo);
         }
 
-        .social-link:hover svg {
-            stroke: var(--verde-profundo);
+        .instagram-official-link:hover svg {
+            transform: scale(1.1);
         }
 
-        /* =========================================
-           CALIBRACIÓN MÓVIL EXACTA
-           ========================================= */
+        /* =========================================================
+           ADAPTACIÓN MÓVIL
+           ========================================================= */
         @media (max-width: 480px) {
-            .luxury-hub {
-                width: 88%;
-                max-width: 380px;
-                gap: 22px;
-                padding: 16px 0 10px 0;
+            body {
+                padding: calc(env(safe-area-inset-top, 16px) + 16px) 16px calc(env(safe-area-inset-bottom, 16px) + 20px);
             }
 
-            .logo-emblem-wrap {
-                width: 64px;
-                height: 64px;
+            .directorate-container {
+                gap: 26px;
             }
 
-            .fs-tree-refined {
-                width: 40px;
-                height: 40px;
+            #svg8 {
+                max-width: 225px;
             }
 
-            .fs-header h1 {
-                font-size: 1.42rem;
-                letter-spacing: 0.14em;
-            }
-
-            .brand-eyebrow {
-                font-size: 0.6rem;
-                letter-spacing: 0.32em;
-            }
-
-            .fs-header .location-tag {
-                font-size: 0.62rem;
-            }
-
-            .mosaic-grid {
-                gap: 11px;
-            }
-
-            .span-2 {
+            .concierge-card {
                 padding: 18px 20px;
             }
 
-            .span-1 {
-                padding: 18px 15px;
-                min-height: 140px;
+            .card-headline {
+                font-size: 1.3rem;
             }
 
-            .card h2 {
-                font-size: 1.02rem;
+            .duo-card {
+                padding: 16px 14px;
+                min-height: 145px;
             }
 
-            .span-1 h2 {
-                font-size: 0.96rem;
-            }
-
-            .card-subtitle {
-                font-size: 0.58rem;
-                letter-spacing: 0.14em;
-            }
-
-            .card-action-cue {
-                margin-top: 10px;
+            .duo-card .card-headline {
+                font-size: 1.12rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- HUB DE EXPERIENCIAS FOUR SEASONS -->
-    <main class="luxury-hub">
+    <!-- ATMÓSFERA VISIBLE -->
+    <div class="scenic-background" aria-hidden="true">
+        <div class="dappled-sunlight"></div>
+        <div class="warm-terracotta-glow"></div>
+        <div class="botanical-glow-left"></div>
+        <div class="patio-fountain-geometry"></div>
+    </div>
+
+    <!-- NÚCLEO EDITORIAL -->
+    <main class="directorate-container">
         
-        <!-- CABECERA DE ALTA GASTRONOMÍA Y HOTELERÍA -->
-        <header class="fs-header">
-            <div class="logo-emblem-wrap" aria-hidden="true">
-                <div class="logo-halo"></div>
-                <!-- Árbol de las Cuatro Estaciones de Trazado Orfebre -->
-                <svg class="fs-tree-refined" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Tronco y ramas principales -->
-                    <path d="M50,88 L50,54 M50,54 C47,44 38,38 32,32 M50,54 C53,44 62,38 68,32 M50,44 C45,34 40,24 50,14 C60,24 55,34 50,44 Z" />
-                    <!-- Rama Primavera (Brotes florales sutiles) -->
-                    <path d="M32,32 C26,27 22,32 20,28 M30,36 C24,37 23,43 18,44" />
-                    <circle cx="20" cy="28" r="1.5" fill="var(--oro-seda)" stroke="none" />
-                    <circle cx="18" cy="44" r="1.5" fill="var(--oro-seda)" stroke="none" />
-                    <!-- Rama Verano (Follaje pleno y estilizado) -->
-                    <path d="M68,32 C74,27 78,31 81,26 M70,36 C76,37 77,43 82,44" />
-                    <path d="M80,24 C83,28 79,32 82,34 M81,42 C85,45 80,48 83,50" />
-                    <!-- Rama Otoño (Hojas en desprendimiento) -->
-                    <path d="M64,52 C68,58 74,60 78,65 M73,62 C76,68 81,69 84,73" />
-                    <circle cx="79" cy="72" r="1.2" fill="var(--oro-viejo)" stroke="none" />
-                    <!-- Rama Invierno (Líneas depuradas sin hojas) -->
-                    <path d="M36,52 C31,58 25,62 21,67 M28,60 C23,66 18,68 15,74" />
-                    <!-- Base Raíces simétricas -->
-                    <path d="M46,88 L42,91 M54,88 L58,91 M50,88 L50,92" />
+        <!-- CABECERA: LOGO FOUR SEASONS OFICIAL EXACTO -->
+        <header class="brand-header">
+            <div class="brand-logo-frame" aria-label="Four Seasons Hotels and Resorts">
+                <svg version="1.1" id="svg8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="34.1 -15.8 265.2 121.8" style="enable-background:new 34.1 -15.8 265.2 121.8;" xml:space="preserve">
+                 <g id="layer1" transform="translate(-45.808404,-343.61173)">
+                  <g id="g453" transform="translate(0.26458345,-0.2645772)">
+                   <path id="Fill-24" d="M87.5,449h-7.8v-1.2h2.3v-19.5h-2.1v-1.2h13.8c2.9,0,6.9,0.1,6.9,0.1l0,0&#xA;&#x9;&#x9;&#x9;l0.8,6.8h-1l-0.1-0.3c-1.2-4.2-2.1-5.4-6.6-5.4h-8.1v9.5h4.8c4,0,5.2-0.4,5.2-3v-0.4h1v7.8h-1v-0.4c0-1.9-1.1-2.9-5.2-2.9h-4.8&#xA;&#x9;&#x9;&#x9;v8.8h1.9L87.5,449">
+                   </path>
+                   <path id="Fill-26" d="M114.5,431.7c-5.4,0-8.5,3-8.5,8.4c0,5.3,3,8.3,8.5,8.3&#xA;&#x9;&#x9;&#x9;c5.5,0,8.5-2.9,8.5-8.3C123,434.8,119.9,431.7,114.5,431.7 M114.5,449.4c-7.9,0-12.2-4.8-12.2-9.3c0-5.9,6.2-9.4,12.2-9.4&#xA;&#x9;&#x9;&#x9;c7.9,0,12.2,4.9,12.2,9.4C126.7,446.1,120.4,449.4,114.5,449.4">
+                   </path>
+                   <path id="Fill-27" d="M139.4,449.4c-4.4,0-9.8-1.6-9.8-9.1v-8.2h-1.8v-1h7.2v1h-2v8.2&#xA;&#x9;&#x9;&#x9;c0,7,4,8.1,6.4,8.1c3.7,0,7.7-2.1,7.7-8.1v-8.2h-1.8v-1h4.4v1H148v8.2C148,447,143.4,449.4,139.4,449.4">
+                   </path>
+                   <path id="Fill-28" d="M156.5,440h6.5c3.1,0,4.5-1.2,4.5-3.9c0-2.7-1.4-3.9-4.5-3.9h-6.5&#xA;&#x9;&#x9;&#x9;L156.5,440z M163.2,441h-6.7v6.9h1.7v1h-7v-1h2.1v-15.8h-2.1v-1H163c2,0,8.2,0,8.2,5c0,2.3-1.3,3.8-3.7,4.5&#xA;&#x9;&#x9;&#x9;C167.5,440.6,166.2,441,163.2,441L163.2,441z">
+                   </path>
+                   <path id="Fill-29" d="M206.4,429.2l0.5,5.3l-1,0l-0.3-0.9c-1.4-4-4.2-5.7-8.6-5.7&#xA;&#x9;&#x9;&#x9;c-4.4,0-7,1.2-7,3.3c0,2.3,3.6,3.2,7.5,4.2c4.7,1.2,10.1,2.5,10.1,7c0,4.7-3.6,7.1-10.7,7.1c0,0-5.2-0.2-9.3-1.7l-1.2-6.3h0.9&#xA;&#x9;&#x9;&#x9;l0.4,1c1.5,3.6,5.1,5.9,9.2,5.9c3.1,0,8.2-0.6,8.2-4.3c0-2.7-3.8-3.6-7.9-4.6c-4.8-1.2-9.7-2.3-9.7-6.6c0-3.9,3.5-6.1,9.5-6.1&#xA;&#x9;&#x9;&#x9;c1.8,0,2.9,0.2,4.7,0.7C201.8,427.5,204.8,428.3,206.4,429.2">
+                   </path>
+                   <path id="Fill-30" d="M229.1,449.2L229.1,449.2c-0.1,0-3.2-0.1-4.9-0.1h-13.4v-1h2v-15.8h-2v-1&#xA;&#x9;&#x9;&#x9;h13c1.6,0,3.3,0,3.7-0.1l1-0.1l0.6,5l-0.8,0l-0.1-0.3c-1.1-3.3-2.7-3.5-4.4-3.5h-7.7v7h4.3c3.1,0,4.1-0.4,4.1-2.6v-0.4h0.9v6.9&#xA;&#x9;&#x9;&#x9;h-0.9v-0.4c0-1.7-1-2.4-4.1-2.4h-4.3v7.8h8.2c3,0,3.7-0.9,4.7-3.3l0.1-0.2h1L229.1,449.2">
+                   </path>
+                   <path id="Fill-31" d="M237.5,442.1h10.1l-5.1-9.1L237.5,442.1z M249,449v-1h1.9l-2.7-4.9h-11.3&#xA;&#x9;&#x9;&#x9;l-2.7,4.9h1.9v1h-4.5v-1h1.6l8.8-15.8h-1.6v-1h4.8l0.1,0.2l9.2,16.7h1.8v1L249,449L249,449z">
+                   </path>
+                   <path id="Fill-32" d="M290,430.7c-6,0-12.2,3.5-12.2,9.4c0,4.5,4.3,9.3,12.2,9.3&#xA;&#x9;&#x9;&#x9;c5.9,0,12.2-3.3,12.2-9.3C302.2,435.5,298,430.7,290,430.7 M290,448.4c-5.5,0-8.5-2.9-8.5-8.3c0-5.3,3.1-8.4,8.5-8.4&#xA;&#x9;&#x9;&#x9;c5.4,0,8.5,3,8.5,8.4C298.6,445.4,295.6,448.4,290,448.4">
+                   </path>
+                   <polyline id="Fill-33" points="303.7,431.1 303.7,432.1 305.1,432.1 305.9,432.9 305.9,448 303.8,448 303.8,449 308.8,449 &#xA;&#x9;&#x9;&#x9;308.8,448 306.9,448 306.9,433.7 323.8,449.7 324,449.9 324,432.1 325.6,432.1 325.6,431.1 321.1,431.1 321.1,432.1 323.1,432.1 &#xA;&#x9;&#x9;&#x9;323.1,444.6 308.8,431.1 308.8,431.1 303.7,431.1">
+                   </polyline>
+                   <path id="Fill-34" d="M173.3,448.4c-2.7-0.1-3-1.1-3.7-2.5l-2.5-5.4h-3.7l4.6,8.9h5.3&#xA;&#x9;&#x9;&#x9;L173.3,448.4">
+                   </path>
+                   <path id="Fill-35" d="M274.3,432.9l0.4,4.4l-0.8,0l-0.2-0.7c-1.1-3.3-3.4-4.7-7-4.7&#xA;&#x9;&#x9;&#x9;c-3.6,0-5.7,1-5.7,2.7c0,1.9,3,2.6,6.1,3.4c3.9,1,8.3,2.1,8.3,5.8c0,3.8-2.9,5.8-8.8,5.8c0,0-4.3-0.2-7.6-1.4l-1-5.2h0.7l0.3,0.8&#xA;&#x9;&#x9;&#x9;c1.2,2.9,4.2,4.9,7.5,4.9c2.5,0,6.7-0.5,6.7-3.5c0-2.2-3.1-2.9-6.5-3.7c-3.9-0.9-7.9-1.9-7.9-5.4c0-3.2,2.8-5,7.8-5&#xA;&#x9;&#x9;&#x9;c1.5,0,2.4,0.2,3.8,0.6C270.5,431.5,272.9,432.2,274.3,432.9">
+                   </path>
+                   <path id="Fill-36" d="M343.9,432.9l0.4,4.4l-0.8,0l-0.2-0.7c-1.1-3.3-3.4-4.7-7-4.7&#xA;&#x9;&#x9;&#x9;c-3.6,0-5.7,1-5.7,2.7c0,1.9,3,2.6,6.1,3.4c3.9,1,8.3,2.1,8.3,5.8c0,3.8-3,5.8-8.8,5.8c0,0-4.3-0.2-7.6-1.4l-1-5.2h0.7l0.3,0.8&#xA;&#x9;&#x9;&#x9;c1.2,2.9,4.2,4.9,7.5,4.9c2.5,0,6.7-0.5,6.7-3.5c0-2.2-3.1-2.9-6.5-3.7c-3.9-0.9-7.9-1.9-7.9-5.4c0-3.2,2.8-5,7.8-5&#xA;&#x9;&#x9;&#x9;c1.5,0,2.4,0.2,3.8,0.6C340,431.5,342.5,432.2,343.9,432.9">
+                   </path>
+                   <path id="Fill-37" d="M240.7,379.2c-1.5,0.6-2.5,1.7-2.1,3.7&#xA;&#x9;&#x9;&#x9;C240.4,382.2,240.9,380.8,240.7,379.2">
+                   </path>
+                   <path id="Fill-38" d="M234.6,380.3c0.3,1.6,1.2,2.8,3.1,2.8&#xA;&#x9;&#x9;&#x9;C237.5,381.2,236.2,380.4,234.6,380.3">
+                   </path>
+                   <path id="Fill-39" d="M237.7,388.1c-0.1-1.9-1.4-2.7-3.1-2.8&#xA;&#x9;&#x9;&#x9;C234.8,386.9,235.6,388.1,237.7,388.1">
+                   </path>
+                   <path id="Fill-40" d="M232.1,362.6c-1.6,0.1-2.9,0.9-3.1,2.8&#xA;&#x9;&#x9;&#x9;C230.9,365.4,231.8,364.2,232.1,362.6">
+                   </path>
+                   <path id="Fill-41" d="M224.6,361.1c0.3,1.6,1.2,2.8,3.1,2.8&#xA;&#x9;&#x9;&#x9;C227.5,362.1,226.3,361.3,224.6,361.1">
+                   </path>
+                   <path id="Fill-42" d="M224.2,355.2c1.9,0,2.8-1.2,3.1-2.8C225.7,352.5,224.4,353.3,224.2,355.2">
+                   </path>
+                   <path id="Fill-43" d="M225.7,348.1c-1.5,0.7-2.5,1.8-2.1,3.7&#xA;&#x9;&#x9;&#x9;C225.5,351.1,225.9,349.7,225.7,348.1">
+                   </path>
+                   <path id="Fill-44" d="M220.3,349.4c0.1,1.6,0.8,2.9,2.7,3.2C223,350.8,221.9,349.8,220.3,349.4">
+                   </path>
+                   <path id="Fill-45" d="M219.5,344.8c1.9,0,2.8-1.2,3.1-2.8C221,342.1,219.8,342.9,219.5,344.8">
+                   </path>
+                   <path id="Fill-46" d="M221.2,338.1c-1.4,0.8-2.3,2-1.7,3.9C221.2,341.1,221.6,339.7,221.2,338.1">
+                   </path>
+                   <path id="Fill-47" d="M219,343.3c0.1-1.9-1.1-2.9-2.7-3.2C216.4,341.7,217.1,343,219,343.3">
+                   </path>
+                   <path id="Fill-48" d="M217.9,346.1c-0.2-1.9-1.5-2.7-3.1-2.8C215.1,344.9,216,346.1,217.9,346.1">
+                   </path>
+                   <path id="Fill-49" d="M212.8,349.9c0.6-0.4,6.5-3.8,6.5-3.8c0,0,0,0,0-0.1l-0.3-2.1H219&#xA;&#x9;&#x9;&#x9;c0,0,0.1,0.9,0.1,1.2c0,0.4-0.1,0.5-0.4,0.7l-6.6,3.4c0,0.5,0,1,0,1.6C212.2,350.5,212.4,350.2,212.8,349.9">
+                   </path>
+                   <path id="Fill-50" d="M211.3,331c-0.2-1.9-1.5-2.7-3.1-2.8C208.5,329.8,209.4,331,211.3,331">
+                   </path>
+                   <path id="Fill-51" d="M211.3,334.2c-0.2-1.9-1.5-2.7-3.1-2.8&#xA;&#x9;&#x9;&#x9;C208.5,332.9,209.4,334.1,211.3,334.2">
+                   </path>
+                   <path id="Fill-52" d="M211.2,337.3c-0.2-1.9-1.5-2.7-3.1-2.8&#xA;&#x9;&#x9;&#x9;C208.4,336.1,209.3,337.2,211.2,337.3">
+                   </path>
+                   <path id="Fill-53" d="M211.2,340.4c-0.2-1.9-1.5-2.7-3.1-2.8&#xA;&#x9;&#x9;&#x9;C208.4,339.2,209.3,340.4,211.2,340.4">
+                   </path>
+                   <path id="Fill-54" d="M211.1,343.5c-0.2-1.9-1.5-2.7-3.1-2.8&#xA;&#x9;&#x9;&#x9;C208.3,342.3,209.2,343.5,211.1,343.5">
+                   </path>
+                   <path id="Fill-55" d="M211.1,346.7c-0.2-1.9-1.5-2.7-3.1-2.8&#xA;&#x9;&#x9;&#x9;C208.3,345.5,209.2,346.6,211.1,346.7">
+                   </path>
+                   <path id="Fill-56" d="M206.9,339.5c-1.6,0.5-2.6,1.5-2.4,3.5C206.4,342.5,207,341.2,206.9,339.5">
+                   </path>
+                   <path id="Fill-57" d="M204.6,345.3c1.9,0,2.8-1.2,3.1-2.8C206.1,342.6,204.8,343.4,204.6,345.3">
+                   </path>
+                   <path id="Fill-58" d="M203.8,343.4c0.3-1.9-0.8-3-2.3-3.5C201.4,341.5,202,342.8,203.8,343.4">
+                   </path>
+                   <path id="Fill-59" d="M203.4,345.5c-0.2-1.9-1.5-2.7-3.1-2.8&#xA;&#x9;&#x9;&#x9;C200.6,344.3,201.5,345.5,203.4,345.5">
+                   </path>
+                   <path id="Fill-60" d="M208,354.3c-1.6,0.1-2.9,0.9-3.1,2.8C206.8,357.1,207.7,355.9,208,354.3">
+                   </path>
+                   <path id="Fill-61" d="M202.6,356c1.9,0,2.8-1.2,3.1-2.8C204.1,353.3,202.8,354.1,202.6,356">
+                   </path>
+                   <path id="Fill-62" d="M210.3,355.5c-1.6,0.1-2.9,0.9-3.1,2.8C209.1,358.3,210,357.1,210.3,355.5">
+                   </path>
+                   <path id="Fill-63" d="M206.2,352.3c1.9,0,2.8-1.2,3.1-2.8C207.7,349.6,206.4,350.4,206.2,352.3">
+                   </path>
+                   <path id="Fill-64" d="M204,351c1.9,0,2.8-1.2,3.1-2.8C205.5,348.3,204.2,349.1,204,351">
+                   </path>
+                   <path id="Fill-65" d="M201.8,349.7c1.9,0,2.8-1.2,3.1-2.8C203.3,347,202,347.8,201.8,349.7">
+                   </path>
+                   <path id="Fill-66" d="M203.4,351.9c-1.6,0.1-2.9,0.9-3.1,2.8&#xA;&#x9;&#x9;&#x9;C202.3,354.7,203.1,353.5,203.4,351.9">
+                   </path>
+                   <path id="Fill-67" d="M199.7,351.7c0.2-1.9-0.8-3-2.4-3.5C197.3,349.9,197.9,351.2,199.7,351.7">
+                   </path>
+                   <path id="Fill-68" d="M199.2,354.6c-0.2-1.9-1.5-2.7-3.1-2.8&#xA;&#x9;&#x9;&#x9;C196.3,353.4,197.2,354.6,199.2,354.6">
+                   </path>
+                   <path id="Fill-69" d="M200.8,364.4c-1.6,0.1-2.9,0.9-3.1,2.8&#xA;&#x9;&#x9;&#x9;C199.6,367.2,200.5,366.1,200.8,364.4">
+                   </path>
+                   <path id="Fill-70" d="M195.5,366c1.9,0,2.8-1.2,3.1-2.8C196.9,363.3,195.7,364.1,195.5,366">
+                   </path>
+                   <path id="Fill-71" d="M203.1,365.6c-1.6,0.1-2.9,0.9-3.1,2.8&#xA;&#x9;&#x9;&#x9;C201.9,368.4,202.8,367.3,203.1,365.6">
+                   </path>
+                   <path id="Fill-72" d="M205.4,366.8c-1.6,0.1-2.9,0.9-3.1,2.8&#xA;&#x9;&#x9;&#x9;C204.2,369.6,205.1,368.4,205.4,366.8">
+                   </path>
+                   <path id="Fill-73" d="M207.7,368c-1.6,0.1-2.9,0.9-3.1,2.8C206.5,370.8,207.4,369.6,207.7,368">
+                   </path>
+                   <path id="Fill-74" d="M209.9,369.2c-1.6,0.1-2.9,0.9-3.1,2.8C208.8,372,209.7,370.8,209.9,369.2">
+                   </path>
+                   <path id="Fill-75" d="M206.7,364.5c1.9,0,2.8-1.2,3.1-2.8C208.1,361.8,206.9,362.6,206.7,364.5">
+                   </path>
+                   <path id="Fill-76" d="M204.5,363.2c1.9,0,2.8-1.2,3.1-2.8C205.9,360.5,204.7,361.3,204.5,363.2">
+                   </path>
+                   <path id="Fill-77" d="M202.3,361.9c1.9,0,2.8-1.2,3.1-2.8C203.7,359.2,202.5,360,202.3,361.9">
+                   </path>
+                   <path id="Fill-78" d="M200.1,360.6c1.9,0,2.8-1.2,3.1-2.8C201.5,357.9,200.3,358.7,200.1,360.6">
+                   </path>
+                   <path id="Fill-79" d="M197.9,359.3c1.9,0,2.8-1.2,3.1-2.8C199.3,356.6,198.1,357.4,197.9,359.3">
+                   </path>
+                   <path id="Fill-80" d="M198.5,360.3c-1.6,0.1-2.9,0.9-3.1,2.8&#xA;&#x9;&#x9;&#x9;C197.3,363.1,198.2,361.9,198.5,360.3">
+                   </path>
+                   <path id="Fill-81" d="M195,361.5c0.5-1.9-0.4-3-1.9-3.8C192.8,359.4,193.2,360.8,195,361.5">
+                   </path>
+                   <path id="Fill-82" d="M194.5,364c-0.2-1.9-1.5-2.7-3.1-2.8C191.7,362.8,192.6,364,194.5,364">
+                   </path>
+                   <path id="Fill-83" d="M194.1,366.9c-0.2-1.9-1.5-2.7-3.1-2.8&#xA;&#x9;&#x9;&#x9;C191.2,365.6,192.1,366.8,194.1,366.9">
+                   </path>
+                   <path id="Fill-84" d="M199.4,374.8c1.9,0,2.8-1.2,3.1-2.8C200.9,372.1,199.7,372.9,199.4,374.8">
+                   </path>
+                   <path id="Fill-85" d="M199.4,379.2c1.9,0,2.8-1.2,3.1-2.8C200.9,376.5,199.7,377.3,199.4,379.2">
+                   </path>
+                   <path id="Fill-86" d="M197.3,373.5c1.9,0,2.8-1.2,3.1-2.8C198.7,370.8,197.5,371.6,197.3,373.5">
+                   </path>
+                   <path id="Fill-87" d="M195.1,372.2c1.9,0,2.8-1.2,3.1-2.8C196.6,369.5,195.3,370.3,195.1,372.2">
+                   </path>
+                   <path id="Fill-88" d="M192.9,370.9c1.9,0,2.8-1.2,3.1-2.8C194.4,368.2,193.1,369,192.9,370.9">
+                   </path>
+                   <path id="Fill-89" d="M238.1,383.1c0,0,0.3,3.2,0.2,4.5c-0.1,1.5-0.3,2-1.4,2.7L213,402.5v0&#xA;&#x9;&#x9;&#x9;c0-2.3-0.1-5-0.1-8l0-0.8c0-1.6,0.4-2.5,2.3-3.7c1.6-1,19.3-11.4,19.3-11.4c0,0,0.1-0.1,0.1-0.2l-0.8-6.3h-0.3&#xA;&#x9;&#x9;&#x9;c0,0,0.2,2.6,0.2,3.7c-0.1,1.2-0.2,1.6-1.2,2.2l-19.8,10.2c-0.1-3-0.1-6.2-0.2-9.5l0-0.9c0-1,0.4-1.6,1.7-2.4&#xA;&#x9;&#x9;&#x9;c1.2-0.8,14.4-8.5,14.4-8.5c0,0,0.1-0.1,0.1-0.2l-0.6-4.7h-0.2c0,0,0.2,2,0.1,2.8c-0.1,0.9-0.2,1.2-0.9,1.7l-14.7,7.6&#xA;&#x9;&#x9;&#x9;c-0.1-3.7-0.1-7.4-0.2-11v0c0.1-0.5,0.4-1.2,1.2-1.7c0.9-0.6,10.3-6.1,10.3-6.1c0,0,0.1,0,0.1-0.1l-0.4-3.3h-0.1&#xA;&#x9;&#x9;&#x9;c0,0,0.1,1.4,0.1,2c0,0.6-0.1,0.9-0.6,1.2l-10.5,5.4v0c-0.1-3.4-0.1-6.7-0.2-9.8c0-0.5,0-1,0-1.6c-0.2-12.1-0.4-21.1-0.4-21.1&#xA;&#x9;&#x9;&#x9;c0-0.1,0-0.1-0.1-0.1c-0.1,0-0.1,0-0.1,0.1c0,0-0.2,9-0.4,21.1c0,0.2,0,0.5,0,0.7c0-0.2,0-0.5,0-0.7l-6.6-3.4&#xA;&#x9;&#x9;&#x9;c-0.3-0.2-0.4-0.3-0.4-0.7c0-0.4,0.1-1.2,0.1-1.2h-0.1l-0.3,2.1c0,0,0,0.1,0,0.1c0,0,6,3.5,6.5,3.8c0.4,0.2,0.6,0.5,0.7,0.8v0l0,0&#xA;&#x9;&#x9;&#x9;c-0.1,3.1-0.1,6.4-0.2,9.8l-10.5-5.4c-0.5-0.3-0.6-0.5-0.6-1.2c0-0.6,0.1-2,0.1-2h-0.1l-0.4,3.3c0,0.1,0,0.1,0.1,0.1&#xA;&#x9;&#x9;&#x9;c0,0,9.4,5.5,10.3,6.1c0.7,0.5,1.1,1.1,1.2,1.6v0c-0.1,3.7-0.1,7.4-0.2,11.1l-14.7-7.6c-0.7-0.4-0.8-0.8-0.9-1.7&#xA;&#x9;&#x9;&#x9;c-0.1-0.8,0.1-2.8,0.1-2.8H195l-0.6,4.7c0,0.1,0,0.1,0.1,0.2c0,0,13.2,7.7,14.4,8.5c1.3,0.8,1.7,1.5,1.7,2.5l0,0.9v0&#xA;&#x9;&#x9;&#x9;c-0.1,3.2-0.1,6.3-0.2,9.3l-19.8-10.2c-0.9-0.6-1.1-1-1.2-2.2c-0.1-1.1,0.2-3.7,0.2-3.7h-0.3l-0.8,6.3c0,0.1,0.1,0.2,0.1,0.2&#xA;&#x9;&#x9;&#x9;c0,0,17.7,10.3,19.3,11.4c1.9,1.2,2.3,2.1,2.3,3.7v0c-0.1,3.2-0.1,6.2-0.2,8.7l-23.9-12.3c-1.1-0.7-1.3-1.2-1.4-2.7&#xA;&#x9;&#x9;&#x9;c-0.1-1.3,0.2-4.5,0.2-4.5h-0.3l-1,7.6c0,0.2,0.1,0.2,0.1,0.3c0,0,21.4,12.5,23.4,13.8c2.3,1.5,2.8,1.6,2.8,4.3c0,0.1,0,3.2,0,3.4&#xA;&#x9;&#x9;&#x9;c0,2.4-1.9,2.4-1.9,2.4l0,0.5h6.9l0-0.5c0,0-1.9-0.1-1.9-2.4c0-0.1,0-3.1,0-3.4c0-2.7,0.5-2.8,2.8-4.3c2-1.3,23.4-13.8,23.4-13.8&#xA;&#x9;&#x9;&#x9;c0,0,0.1-0.1,0.1-0.3l-1-7.6L238.1,383.1">
+                   </path>
+                   <path id="Fill-90" d="M204,377.5c1.9,0,2.8-1.2,3.1-2.8C205.4,374.8,204.2,375.5,204,377.5">
+                   </path>
+                   <path id="Fill-91" d="M209.3,376c-1.6,0.1-2.9,0.9-3.1,2.8C208.1,378.9,209,377.7,209.3,376">
+                   </path>
+                   <path id="Fill-92" d="M220.9,369.6c1.5-1.2,1.5-2.7,0.7-4.2C220.4,366.6,219.9,368,220.9,369.6">
+                   </path>
+                   <path id="Fill-93" d="M217.8,367.5c-1.2,1.1-1.7,2.5-0.7,4.2C218.5,370.5,218.5,369,217.8,367.5">
+                   </path>
+                   <path id="Fill-94" d="M213.7,361.8c0.3,1.6,1.2,2.8,3.1,2.8&#xA;&#x9;&#x9;&#x9;C216.6,362.7,215.3,361.9,213.7,361.8">
+                   </path>
+                   <path id="Fill-95" d="M224.8,374.5c-0.2-1.9-1.5-2.7-3.1-2.8&#xA;&#x9;&#x9;&#x9;C221.9,373.3,222.8,374.5,224.8,374.5">
+                   </path>
+                   <path id="Fill-96" d="M220.9,376.6c-0.2-1.9-1.5-2.7-3.1-2.8C218,375.4,218.9,376.6,220.9,376.6">
+                   </path>
+                   <path id="Fill-97" d="M231.8,392.3c-0.2-1.9-1.5-2.7-3.1-2.9C229,391.1,229.9,392.2,231.8,392.3">
+                   </path>
+                   <path id="Fill-98" d="M227.3,394.3c-0.2-1.9-1.5-2.7-3.1-2.8&#xA;&#x9;&#x9;&#x9;C224.5,393.1,225.4,394.3,227.3,394.3">
+                   </path>
+                   <path id="Fill-99" d="M222.1,386.7c0.3,1.6,1.2,2.8,3.1,2.8C225,387.6,223.8,386.8,222.1,386.7">
+                   </path>
+                   <path id="Fill-100" d="M219.2,398.5c-0.2-1.9-1.5-2.7-3.1-2.9&#xA;&#x9;&#x9;&#x9;C216.4,397.3,217.2,398.5,219.2,398.5">
+                   </path>
+                   <path id="Fill-101" d="M236.4,393.7c-0.3,1.9,0.8,2.9,2.5,3.4&#xA;&#x9;&#x9;&#x9;C239,395.4,238.4,394.1,236.4,393.7">
+                   </path>
+                   <path id="Fill-102" d="M232.1,396.8c0.1,1.9,1.4,2.7,3.1,2.9C235.1,398,234.2,396.8,232.1,396.8">
+                   </path>
+                   <path id="Fill-103" d="M225.6,403.1c1.8-0.7,2.2-2.2,1.9-3.8C226,400,225.1,401.2,225.6,403.1">
+                   </path>
+                   <path id="Fill-104" d="M233.3,373.8c-0.2-1.9-1.5-2.7-3.1-2.8&#xA;&#x9;&#x9;&#x9;C230.4,372.6,231.3,373.8,233.3,373.8">
+                   </path>
+                   <path id="Fill-105" d="M233.1,376.7c-0.2-1.9-1.5-2.7-3.1-2.8&#xA;&#x9;&#x9;&#x9;C230.3,375.4,231.2,376.6,233.1,376.7">
+                   </path>
+                   <path id="Fill-106" d="M234.8,378.6c1.9,0,2.8-1.2,3.1-2.8C236.3,375.9,235,376.6,234.8,378.6">
+                   </path>
+                   <path id="Fill-107" d="M237.5,371c-1.6,0.1-2.9,0.9-3.1,2.8C236.3,373.8,237.2,372.6,237.5,371">
+                   </path>
+                  </g>
+                 </g>
                 </svg>
             </div>
-            
-            <div class="title-wrapper">
-                <span class="brand-eyebrow">México</span>
-                <h1>Four Seasons</h1>
-                <span class="location-tag">Paseo de la Reforma · CDMX</span>
+
+            <div class="brand-identity">
+                <h1 class="sr-only">Four Seasons Hotel Mexico City</h1>
+                <span class="hotel-destination">Hotel Mexico City</span>
+                <p class="hotel-intro-quote">"Un refugio estilo hacienda en el corazón de Paseo de la Reforma"</p>
             </div>
         </header>
 
-        <!-- MOSAICO DE ENLACES DE ESTANCIA Y CONSERJERÍA -->
-        <section class="mosaic-grid" aria-label="Directorio de experiencias">
+        <!-- MOSAICO ARQUITECTÓNICO DE ACCESOS -->
+        <section class="experience-directory" aria-label="Directorio exclusivo de hospitalidad">
             
-            <!-- TARJETA 01: RESERVAS Y OFERTAS -->
-            <a href="https://www.fourseasons.com/mexico/offers/" class="card span-2" target="_blank" rel="noopener noreferrer">
-                <div class="card-meta-header">
-                    <span class="card-num">N° I · Estancia</span>
-                    <div class="card-ico-wrapper">
-                        <svg viewBox="0 0 24 24">
-                            <rect x="3" y="4" width="18" height="17" rx="2" ry="2"></rect>
-                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                            <circle cx="12" cy="15" r="1.5" fill="currentColor"></circle>
-                        </svg>
-                    </div>
+            <!-- TARJETA 01: RESERVACIONES DIRECTAS -->
+            <a href="https://www.fourseasons.com/mexico/offers/" class="concierge-card" target="_blank" rel="noopener noreferrer">
+                <div class="card-text-block">
+                    <span class="card-meta-top">Estancia Exclusiva</span>
+                    <h2 class="card-headline">Reservaciones & Ofertas</h2>
+                    <p class="card-caption">Tarifas preferenciales, paquetes de autor y beneficios directos</p>
                 </div>
-                <div class="card-content">
-                    <h2>Reservas de Lujo & Ofertas</h2>
-                    <span class="card-subtitle">Tarifas preferenciales y escapadas</span>
-                </div>
-                <div class="card-action-cue">
-                    <span>Descubrir estancia</span>
-                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <div class="card-action-mark" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                 </div>
             </a>
 
-            <!-- TARJETA 02: HABITACIONES & SUITES -->
-            <a href="https://www.fourseasons.com/mexico/accommodations/" class="card span-1" target="_blank" rel="noopener noreferrer">
-                <div class="card-meta-header">
-                    <span class="card-num">N° II</span>
-                    <div class="card-ico-wrapper">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M3 19v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6"></path>
-                            <path d="M3 15h18"></path>
-                            <path d="M6 11V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4"></path>
-                        </svg>
+            <!-- BLOQUE DÚO: HABITACIONES & GASTRONOMÍA/MIXOLOGÍA -->
+            <div class="directory-duo-row">
+                
+                <!-- HABITACIONES & SUITES -->
+                <a href="https://www.fourseasons.com/mexico/accommodations/" class="duo-card" target="_blank" rel="noopener noreferrer">
+                    <div>
+                        <span class="card-meta-top">Suites</span>
+                        <h2 class="card-headline">Habitaciones & Colección</h2>
+                        <p class="card-caption">Arquitectura con vistas íntimas a los jardines</p>
                     </div>
+                    <div class="duo-bottom-bar">
+                        <span class="duo-signature">Explorar</span>
+                        <div class="duo-arrow" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- GASTRONOMÍA & MIXOLOGÍA ZANAYA & FIFTY MILS -->
+                <a href="https://www.fourseasons.com/mexico/dining/" class="duo-card" target="_blank" rel="noopener noreferrer">
+                    <div>
+                        <span class="card-meta-top">Gastronomía</span>
+                        <h2 class="card-headline">Fifty Mils & Zanaya</h2>
+                        <p class="card-caption">Mixología galardonada y cocina del Pacífico</p>
+                    </div>
+                    <div class="duo-bottom-bar">
+                        <span class="duo-signature">Mesas</span>
+                        <div class="duo-arrow" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- TARJETA 03: EXPERIENCIAS & PAN DULCE -->
+            <a href="https://www.fourseasons.com/mexico/experiences/" class="concierge-card" target="_blank" rel="noopener noreferrer">
+                <div class="card-text-block">
+                    <span class="card-meta-top">Conserjería de Autor</span>
+                    <h2 class="card-headline">Experiencias & Pan Dulce</h2>
+                    <p class="card-caption">Talleres de catas privadas, spa botánico y panadería artesanal</p>
                 </div>
-                <div class="card-content">
-                    <h2>Habitaciones<br>& Suites</h2>
-                    <span class="card-subtitle">Vistas al jardín</span>
-                </div>
-                <div class="card-action-cue">
-                    <span>Explorar</span>
-                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <div class="card-action-mark" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                 </div>
             </a>
 
-            <!-- TARJETA 03: GASTRONOMÍA & MIXOLOGÍA -->
-            <a href="https://www.fourseasons.com/mexico/dining/" class="card span-1" target="_blank" rel="noopener noreferrer">
-                <div class="card-meta-header">
-                    <span class="card-num">N° III</span>
-                    <div class="card-ico-wrapper">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M18 3v5a4 4 0 0 1-4 4H10A4 4 0 0 1 6 8V3"></path>
-                            <line x1="12" y1="12" x2="12" y2="21"></line>
-                            <line x1="8" y1="21" x2="16" y2="21"></line>
-                            <line x1="6" y1="3" x2="18" y2="3"></line>
-                        </svg>
-                    </div>
+            <!-- TARJETA 04: EDITORIAL & MAGAZINE -->
+            <a href="https://www.fourseasons.com/magazine/" class="concierge-card" target="_blank" rel="noopener noreferrer">
+                <div class="card-text-block">
+                    <span class="card-meta-top">Publicación Oficial</span>
+                    <h2 class="card-headline">Four Seasons Magazine</h2>
+                    <p class="card-caption">Crónicas de arte contemporáneo, diseño y cultura en México</p>
                 </div>
-                <div class="card-content">
-                    <h2>Zanaya &<br>Fifty Mils</h2>
-                    <span class="card-subtitle">Cena & Coctelería</span>
-                </div>
-                <div class="card-action-cue">
-                    <span>Mesas</span>
-                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </div>
-            </a>
-
-            <!-- TARJETA 04: MAGAZINE DE VIAJES Y ARTE -->
-            <a href="https://www.fourseasons.com/magazine/" class="card span-2" target="_blank" rel="noopener noreferrer">
-                <div class="card-meta-header">
-                    <span class="card-num">N° IV · Editorial</span>
-                    <div class="card-ico-wrapper">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                            <line x1="9" y1="7" x2="15" y2="7"></line>
-                            <line x1="9" y1="11" x2="13" y2="11"></line>
-                        </svg>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h2>Magazine Four Seasons</h2>
-                    <span class="card-subtitle">Arte, Cultura y Crónicas de México</span>
-                </div>
-                <div class="card-action-cue">
-                    <span>Leer artículos</span>
-                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <div class="card-action-mark" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                 </div>
             </a>
 
         </section>
+
+        <!-- PIE INSTITUCIONAL -->
+        <footer class="brand-footer">
+            <p class="patio-address">Paseo de la Reforma 500 · Col. Juárez · 06600 Ciudad de México</p>
+            <a href="https://www.instagram.com/fsmexico/" class="instagram-official-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram Oficial Four Seasons Mexico City">
+                <svg viewBox="0 0 24 24">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span>@fsmexico</span>
+            </a>
+        </footer>
+
     </main>
-
-    <!-- PIE DISCRETO CON CONTACTO DIRECTO -->
-    <footer class="fs-footer">
-        <p class="reforma-address">Paseo de la Reforma 500 · Cuauhtémoc · 06600 Ciudad de México</p>
-        <a href="https://www.instagram.com/fsmexico/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram Oficial Four Seasons Hotel Mexico City">
-            <svg viewBox="0 0 24 24">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-            </svg>
-            <span>@fsmexico</span>
-        </a>
-    </footer>
-
-    <!-- SISTEMA DE ILUMINACIÓN ORGÁNICA ASÍNCRONA -->
-    <div class="b2b-bg-canvas" aria-hidden="true">
-        <div class="luz-sol-patio"></div>
-        <div class="shape s-botanica"></div>
-        <div class="shape s-cantera"></div>
-        <div class="shape s-sombra-suave"></div>
-        <div class="ring r-primario"></div>
-        <div class="ring r-secundario"></div>
-    </div>
 
 </body>
 </html>
