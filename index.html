@@ -9,29 +9,31 @@
     <!-- Tipografía Editorial Internacional: Cormorant Garamond & Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* =========================================================
-           PALETA DE MATERIALES NOBLES: HACIENDA REFORMA
+           PALETA DE MATERIALES NOBLES: CANTERA, TRAVERTINO & ORO
            ========================================================= */
         :root {
-            /* Verdes Botánicos de la Hacienda */
-            --verde-perfil-fs: #2A3625;
-            --verde-profundo: #111A12;
-            --verde-patio-noche: #172418;
-            --verde-olivo-luz: #3A4C34;
+            /* Fondo: Noche de Jardín Central */
+            --verde-profundo: #0F1910;
+            --verde-hacienda-dark: #162418;
             
-            /* Textil, Travertino y Porcelana */
-            --travertino-luz: #FAF7F2;
-            --marfil-lino: #EEE7DC;
-            --crema-suave: #D9CEBE;
+            /* Tarjetas: Travertino & Lino Marfil (Alto Contraste) */
+            --travertino-puro: #FAF7F2;
+            --travertino-base: #F4EFE6;
+            --travertino-borde: rgba(199, 167, 121, 0.55);
             
-            /* Metales y Terracotas */
+            /* Textos sobre tarjetas: Verde Ónix & Lino Carbón */
+            --texto-tarjeta-titular: #122014;
+            --texto-tarjeta-cuerpo: #3E4D3F;
+            --texto-tarjeta-oro: #8A6834;
+            
+            /* Metales y Acentos de Autor */
             --oro-laton: #C7A779;
             --oro-champagne: #DECAB0;
             --terracota-sol: #984E39;
-            --bronce-tenue: rgba(199, 167, 121, 0.28);
             
             --transicion-lujo: cubic-bezier(0.22, 1, 0.36, 1);
         }
@@ -49,7 +51,7 @@
 
         body {
             background-color: var(--verde-profundo);
-            color: var(--travertino-luz);
+            color: var(--travertino-puro);
             font-family: 'Montserrat', sans-serif;
             min-height: 100vh;
             min-height: 100dvh;
@@ -64,7 +66,7 @@
         }
 
         /* =========================================================
-           FONDO ATMOSFÉRICO: VIVO Y PERCEPTIBLE
+           FONDO ATMOSFÉRICO: VIBRANTE, VISIBLE Y CON PROFUNDIDAD
            ========================================================= */
         .scenic-background {
             position: fixed;
@@ -75,7 +77,7 @@
             pointer-events: none;
             overflow: hidden;
             background: 
-                radial-gradient(ellipse 90% 60% at 50% 0%, #203322 0%, #131E14 45%, #0B110C 100%);
+                radial-gradient(ellipse 90% 60% at 50% 0%, #223724 0%, #132014 45%, #0B120C 100%);
         }
 
         .dappled-sunlight {
@@ -83,12 +85,12 @@
             top: -12%;
             left: 50%;
             transform: translateX(-50%);
-            width: 820px;
-            height: 640px;
+            width: 840px;
+            height: 660px;
             background: radial-gradient(circle at 50% 35%, 
-                rgba(222, 202, 176, 0.24) 0%, 
-                rgba(152, 78, 57, 0.16) 38%, 
-                rgba(42, 54, 37, 0.2) 65%, 
+                rgba(222, 202, 176, 0.30) 0%, 
+                rgba(152, 78, 57, 0.20) 38%, 
+                rgba(42, 54, 37, 0.25) 65%, 
                 transparent 80%);
             filter: blur(55px);
             animation: respiracionSolar 11s infinite alternate ease-in-out;
@@ -100,7 +102,7 @@
             right: -15%;
             width: 520px;
             height: 520px;
-            background: radial-gradient(circle, rgba(152, 78, 57, 0.22) 0%, rgba(42, 54, 37, 0.05) 60%, transparent 80%);
+            background: radial-gradient(circle, rgba(152, 78, 57, 0.28) 0%, rgba(42, 54, 37, 0.08) 60%, transparent 80%);
             filter: blur(65px);
             animation: oscilacionBrisa 18s infinite alternate ease-in-out;
         }
@@ -111,7 +113,7 @@
             left: -20%;
             width: 480px;
             height: 480px;
-            background: radial-gradient(circle, rgba(58, 76, 52, 0.35) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(58, 76, 52, 0.40) 0%, transparent 70%);
             filter: blur(60px);
             animation: oscilacionBrisa 22s infinite alternate-reverse ease-in-out;
         }
@@ -124,8 +126,8 @@
             width: 720px;
             height: 720px;
             border-radius: 50%;
-            border: 1px solid rgba(199, 167, 121, 0.12);
-            box-shadow: inset 0 0 80px rgba(199, 167, 121, 0.04);
+            border: 1px solid rgba(199, 167, 121, 0.16);
+            box-shadow: inset 0 0 80px rgba(199, 167, 121, 0.05);
             animation: giroPausado 140s infinite linear;
         }
 
@@ -134,13 +136,13 @@
             position: absolute;
             inset: 30px;
             border-radius: 50%;
-            border: 1px dashed rgba(222, 202, 176, 0.08);
+            border: 1px dashed rgba(222, 202, 176, 0.10);
         }
 
         @keyframes respiracionSolar {
-            0% { opacity: 0.65; transform: translateX(-50%) scale(0.95); }
-            50% { opacity: 0.95; transform: translateX(-48%) scale(1.05); }
-            100% { opacity: 0.70; transform: translateX(-52%) scale(0.98); }
+            0% { opacity: 0.70; transform: translateX(-50%) scale(0.95); }
+            50% { opacity: 1; transform: translateX(-48%) scale(1.05); }
+            100% { opacity: 0.75; transform: translateX(-52%) scale(0.98); }
         }
 
         @keyframes oscilacionBrisa {
@@ -191,18 +193,18 @@
             transform: scale(1.02);
         }
 
-        /* Renderizado nítido del SVG oficial */
+        /* SVG oficial siempre luminoso y nítido */
         #svg8 {
             width: 100%;
             max-width: 255px;
             height: auto;
             display: block;
-            filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.5));
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.65));
         }
 
         #svg8 path,
         #svg8 polyline {
-            fill: var(--travertino-luz) !important;
+            fill: #FFFFFF !important;
         }
 
         .brand-identity {
@@ -225,11 +227,11 @@
         }
 
         .hotel-destination {
-            font-size: 0.70rem;
-            font-weight: 500;
-            letter-spacing: 0.36em;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.38em;
             text-transform: uppercase;
-            color: var(--oro-laton);
+            color: var(--oro-champagne);
             display: flex;
             align-items: center;
             gap: 12px;
@@ -238,7 +240,7 @@
         .hotel-destination::before,
         .hotel-destination::after {
             content: '';
-            width: 24px;
+            width: 26px;
             height: 1px;
             background: linear-gradient(90deg, transparent, var(--oro-laton));
         }
@@ -250,150 +252,147 @@
         .hotel-intro-quote {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
-            font-size: 1.05rem;
-            font-weight: 400;
-            color: var(--marfil-lino);
-            opacity: 0.92;
-            max-width: 330px;
+            font-size: 1.08rem;
+            font-weight: 500;
+            color: var(--travertino-puro);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            max-width: 340px;
             line-height: 1.35;
             margin-top: 2px;
         }
 
         /* =========================================================
-           DIRECTORIO DE EXPERIENCIAS
+           DIRECTORIO: TARJETAS EN TRAVERTINO MARFIL (ALTO CONTRASTE)
            ========================================================= */
         .experience-directory {
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 15px;
             width: 100%;
         }
 
+        /* Tarjeta Ancha de Travertino Esculpido */
         .concierge-card {
-            background: linear-gradient(135deg, 
-                rgba(32, 47, 34, 0.85) 0%, 
-                rgba(21, 32, 22, 0.92) 50%, 
-                rgba(14, 23, 15, 0.96) 100%);
-            border: 1px solid var(--bronce-tenue);
-            border-radius: 4px;
-            padding: 20px 24px;
+            background: linear-gradient(145deg, #FCFAF6 0%, #F5EFE4 100%);
+            border: 1.2px solid var(--travertino-borde);
+            border-radius: 6px;
+            padding: 22px 24px;
             text-decoration: none;
             color: inherit;
             display: grid;
             grid-template-columns: 1fr auto;
             align-items: center;
             position: relative;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
             box-shadow: 
-                0 10px 28px -6px rgba(0, 0, 0, 0.5),
-                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+                0 16px 36px -8px rgba(0, 0, 0, 0.65),
+                0 2px 8px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
             transition: all 0.4s var(--transicion-lujo);
             overflow: hidden;
         }
 
+        /* Línea artesanal lateral de latón cálido y terracota */
         .concierge-card::before {
             content: '';
             position: absolute;
             left: 0;
             top: 0;
             bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, var(--oro-laton), transparent);
-            opacity: 0.4;
-            transition: opacity 0.4s ease;
+            width: 4px;
+            background: linear-gradient(180deg, var(--oro-laton), var(--terracota-sol));
+            opacity: 0.95;
+            transition: width 0.3s ease;
         }
 
         .card-meta-top {
-            font-size: 0.58rem;
-            font-weight: 500;
-            letter-spacing: 0.28em;
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.26em;
             text-transform: uppercase;
-            color: var(--oro-laton);
+            color: var(--texto-tarjeta-oro);
             margin-bottom: 5px;
             display: block;
         }
 
         .card-headline {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.45rem;
-            font-weight: 500;
-            letter-spacing: 0.02em;
-            color: var(--travertino-luz);
+            font-size: 1.54rem;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            color: var(--texto-tarjeta-titular);
             line-height: 1.15;
             transition: color 0.35s ease;
         }
 
         .card-caption {
-            font-size: 0.72rem;
-            font-weight: 300;
-            color: var(--marfil-lino);
-            letter-spacing: 0.03em;
-            margin-top: 4px;
-            line-height: 1.4;
-            opacity: 0.85;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--texto-tarjeta-cuerpo);
+            letter-spacing: 0.02em;
+            margin-top: 5px;
+            line-height: 1.45;
         }
 
+        /* Botón de acción con alto contraste */
         .card-action-mark {
-            width: 38px;
-            height: 38px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            border: 1px solid rgba(199, 167, 121, 0.35);
+            border: 1.5px solid rgba(199, 167, 121, 0.55);
             display: flex;
             align-items: center;
             justify-content: center;
             margin-left: 16px;
+            background: #EDE6DC;
             transition: all 0.4s var(--transicion-lujo);
-            background: rgba(199, 167, 121, 0.04);
         }
 
         .card-action-mark svg {
-            width: 14px;
-            height: 14px;
-            stroke: var(--oro-laton);
-            stroke-width: 1.5;
+            width: 15px;
+            height: 15px;
+            stroke: var(--texto-tarjeta-titular);
+            stroke-width: 1.8;
             fill: none;
             transition: transform 0.4s var(--transicion-lujo), stroke 0.3s ease;
         }
 
+        /* Bloque Dúo (Habitaciones & Gastronomía) */
         .directory-duo-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
+            gap: 13px;
             width: 100%;
         }
 
         .duo-card {
-            background: linear-gradient(145deg, 
-                rgba(32, 47, 34, 0.82) 0%, 
-                rgba(17, 26, 18, 0.94) 100%);
-            border: 1px solid var(--bronce-tenue);
-            border-radius: 4px;
+            background: linear-gradient(145deg, #FCFAF6 0%, #F5EFE4 100%);
+            border: 1.2px solid var(--travertino-borde);
+            border-radius: 6px;
             padding: 20px 18px;
             text-decoration: none;
             color: inherit;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 155px;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            min-height: 164px;
             box-shadow: 
-                0 8px 24px -4px rgba(0, 0, 0, 0.45),
-                inset 0 1px 0 rgba(255, 255, 255, 0.07);
+                0 14px 32px -6px rgba(0, 0, 0, 0.6),
+                0 2px 6px rgba(0, 0, 0, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
             transition: all 0.4s var(--transicion-lujo);
             position: relative;
         }
 
         .duo-card .card-headline {
-            font-size: 1.25rem;
+            font-size: 1.34rem;
             line-height: 1.15;
             margin-top: 4px;
         }
 
         .duo-card .card-caption {
-            font-size: 0.67rem;
+            font-size: 0.70rem;
             margin-top: 5px;
+            line-height: 1.4;
         }
 
         .duo-bottom-bar {
@@ -402,45 +401,42 @@
             justify-content: space-between;
             margin-top: 16px;
             padding-top: 12px;
-            border-top: 1px solid rgba(199, 167, 121, 0.12);
+            border-top: 1px solid rgba(199, 167, 121, 0.3);
         }
 
         .duo-signature {
-            font-size: 0.58rem;
-            letter-spacing: 0.18em;
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.20em;
             text-transform: uppercase;
-            color: var(--oro-laton);
+            color: var(--texto-tarjeta-oro);
         }
 
         .duo-arrow svg {
-            width: 12px;
-            height: 12px;
-            stroke: var(--oro-laton);
-            stroke-width: 1.5;
+            width: 13px;
+            height: 13px;
+            stroke: var(--texto-tarjeta-titular);
+            stroke-width: 1.8;
             fill: none;
-            transition: transform 0.4s var(--transicion-lujo);
+            transition: transform 0.4s var(--transicion-lujo), stroke 0.3s ease;
         }
 
-        /* Hover States */
+        /* =========================================================
+           HOVER Y TOQUE TÁCTIL
+           ========================================================= */
         .concierge-card:hover,
         .duo-card:hover {
-            border-color: rgba(199, 167, 121, 0.65);
-            background: linear-gradient(135deg, 
-                rgba(38, 56, 40, 0.94) 0%, 
-                rgba(25, 38, 26, 0.98) 100%);
+            background: #FFFFFF;
+            border-color: var(--oro-laton);
             transform: translateY(-3px);
             box-shadow: 
-                0 18px 40px -8px rgba(0, 0, 0, 0.65),
-                0 0 20px rgba(199, 167, 121, 0.15);
-        }
-
-        .concierge-card:hover::before {
-            opacity: 1;
+                0 22px 48px -8px rgba(0, 0, 0, 0.75),
+                0 0 24px rgba(199, 167, 121, 0.4);
         }
 
         .concierge-card:hover .card-headline,
         .duo-card:hover .card-headline {
-            color: #FFFFFF;
+            color: var(--terracota-sol);
         }
 
         .concierge-card:hover .card-action-mark {
@@ -450,10 +446,11 @@
         }
 
         .concierge-card:hover .card-action-mark svg {
-            stroke: #121A13;
+            stroke: #FFFFFF;
         }
 
         .duo-card:hover .duo-arrow svg {
+            stroke: var(--terracota-sol);
             transform: translateX(4px);
         }
 
@@ -472,12 +469,12 @@
         }
 
         .patio-address {
-            font-size: 0.62rem;
-            font-weight: 400;
+            font-size: 0.65rem;
+            font-weight: 500;
             letter-spacing: 0.28em;
             text-transform: uppercase;
-            color: var(--crema-suave);
-            opacity: 0.75;
+            color: var(--oro-champagne);
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
             line-height: 1.6;
         }
 
@@ -485,43 +482,46 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 9px 24px;
+            padding: 10px 26px;
             border-radius: 30px;
-            background: rgba(42, 54, 37, 0.45);
-            border: 1px solid var(--bronce-tenue);
-            color: var(--travertino-luz);
+            background: rgba(250, 247, 242, 0.12);
+            border: 1.2px solid rgba(199, 167, 121, 0.55);
+            color: #FFFFFF;
             text-decoration: none;
-            font-size: 0.65rem;
-            font-weight: 500;
+            font-size: 0.68rem;
+            font-weight: 600;
             letter-spacing: 0.22em;
             text-transform: uppercase;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             transition: all 0.35s var(--transicion-lujo);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
         }
 
         .instagram-official-link svg {
-            width: 13px;
-            height: 13px;
-            stroke: var(--oro-laton);
-            stroke-width: 1.6;
+            width: 14px;
+            height: 14px;
+            stroke: var(--oro-champagne);
+            stroke-width: 1.8;
             fill: none;
             transition: transform 0.35s ease;
         }
 
         .instagram-official-link:hover {
             border-color: var(--oro-laton);
-            background: rgba(42, 54, 37, 0.85);
-            color: var(--oro-champagne);
-            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45), 0 0 14px rgba(199, 167, 121, 0.2);
+            background: #FFFFFF;
+            color: var(--texto-tarjeta-titular);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.6), 0 0 16px rgba(199, 167, 121, 0.3);
             transform: translateY(-2px);
         }
 
         .instagram-official-link:hover svg {
+            stroke: var(--texto-tarjeta-titular);
             transform: scale(1.1);
         }
 
         /* =========================================================
-           ADAPTACIÓN MÓVIL
+           ADAPTACIÓN MÓVIL ÓPTIMA
            ========================================================= */
         @media (max-width: 480px) {
             body {
@@ -533,7 +533,7 @@
             }
 
             #svg8 {
-                max-width: 225px;
+                max-width: 230px;
             }
 
             .concierge-card {
@@ -541,16 +541,16 @@
             }
 
             .card-headline {
-                font-size: 1.3rem;
+                font-size: 1.38rem;
             }
 
             .duo-card {
-                padding: 16px 14px;
-                min-height: 145px;
+                padding: 16px 15px;
+                min-height: 152px;
             }
 
             .duo-card .card-headline {
-                font-size: 1.12rem;
+                font-size: 1.20rem;
             }
         }
     </style>
@@ -752,7 +752,7 @@
             </div>
         </header>
 
-        <!-- MOSAICO ARQUITECTÓNICO DE ACCESOS -->
+        <!-- DIRECTORIO DE EXPERIENCIAS (TRAVERTINO DE ALTO CONTRASTE) -->
         <section class="experience-directory" aria-label="Directorio exclusivo de hospitalidad">
             
             <!-- TARJETA 01: RESERVACIONES DIRECTAS -->
